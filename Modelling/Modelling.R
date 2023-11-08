@@ -157,10 +157,18 @@ ROC_RF$auc # summary and AUC
 plot(ROC_lasso,color = "brown", main="ROC curves", auc.main = F, lwd=2)
 plot(ROC_ridge,color ="blue",add=T, lwd=2)
 plot(ROC_EN,color ="red",add=T, lwd=2)
-plot(ROC_Logistic,color ="yellow",add=T, lwd=2)
+plot(ROC_Logistic,color ="green",add=T, lwd=2)
 plot(ROC_RF,add=T,color ="black", lwd=2)
-legend("bottomright", legend = c("Lasoo", "Ridge","EN", "Simple logistic", "Random forest"),
-       lwd = 3, col = c("brown", "blue","red", "yellow", "black"))
+plot(ROC_CARTModel,color = "orange",add=T, auc.main = F, lwd=2)
+legend("bottomright", legend = c("Lasoo", "Ridge","EN", "Simple logistic", "Random forest", 'CART'),
+       lwd = 3, col = c("brown", "blue","red", "green", "black", 'orange'))
+
+ROC_lasso$auc
+ROC_ridge$auc
+ROC_EN$auc
+ROC_Logistic$auc
+ROC_RF$auc
+ROC_CARTModel$auc
 
 #
 data_3yr <- data %>% 
